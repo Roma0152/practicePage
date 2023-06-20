@@ -5,6 +5,7 @@ import Example from '../Modal/Modal';
 
 const Main = () => {
   const [number, setNumber] = useState(0);
+  // eslint-disable-next-line
   const [forceUpdate, setForceUpdate] = useState(false);
 
   const prevNumberRef = useRef();
