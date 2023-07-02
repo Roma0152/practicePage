@@ -34,3 +34,46 @@ h1 {
 .btnDone {
   margin-left: 200px;
 }
+
+@media only screen and (max-width: 510px) {
+  .modal__title {
+    width: 370px;
+    font-size: 18px;
+  }
+  .weeks__input {
+    width: 300px;
+    margin-right: auto;
+  }
+  .weeks__text-div p {
+    text-align: left;
+  }
+  .weeks__text-div h1 {
+    text-align: left;
+    margin: initial;
+  }
+  .btnDone {
+    margin: inherit;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .weeks__input {
+    width: 150px;
+    height: 80px;
+    text-align: center;
+    margin-right: auto;
+  }
+  .modal__title {
+    font-size: 12px;
+    width: 230px;
+  }
+  .weeks__text-div p {
+    text-align: left;
+  }
+  .weeks__text-div h1 {
+    text-align: left;
+    margin: initial;
+  }
+  .btnDone {
+    margin: inherit;
+  }
+}
