@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-    background-color: #28242c;
-    width: 100vw;
-    height: 100vh;
+  background-color: #20232a;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }

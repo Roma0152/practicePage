@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 
 import './Modal.css';
 
-function Example({ number, setForceUpdate }) {
+function ModalView({ number, setForceUpdate }) {
   const [show, setShow] = useState(true);
 
   const myElementRef = useRef(null);
@@ -69,4 +69,4 @@ function Example({ number, setForceUpdate }) {
   );
 }
 
-export default Example;
+export default ModalView;

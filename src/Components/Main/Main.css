@@ -1,9 +1,10 @@
 .Main {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #28242c;
+  background-color: #20232a;
 }
 
 .weeks-div {
@@ -38,9 +39,32 @@
 }
 
 .endMenu__btn {
-  margin-left: 27px;
+  margin-left: 10px;
+  padding: 20px;
+  border-radius: 50px;
+  margin-bottom: 40px;
 }
 
 .button__text {
   color: #fff;
+}
+
+.weeks__counter {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+@media only screen and (max-width: 840px) {
+  .weeks-div {
+    gap: 100px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .weeks-div {
+    grid-template-columns: 0.2fr;
+  }
+  .button__text {
+    margin-top: 40px;
+  }
 }
