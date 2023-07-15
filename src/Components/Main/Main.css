@@ -5,8 +5,21 @@
   flex-direction: column;
   align-items: center;
   background-color: #20232a;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  padding-bottom: 50px;
+  transition: all 0.3 ease;
 }
-
+.Main__white {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fdf5e6;
+  color: black;
+  transition: all 0.3 ease;
+}
 .weeks-div {
   margin-top: 50px;
   display: grid;
@@ -66,5 +79,19 @@
   }
   .button__text {
     margin-top: 40px;
+  }
+}
+
+.endMenu__theme {
+  margin: 0 0 20px 0;
+  padding: 20px;
+  border-radius: 40px;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 3000px) {
+  .Main {
+    padding-top: 400px;
+    padding-bottom: 910px;
   }
 }

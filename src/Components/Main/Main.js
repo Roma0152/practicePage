@@ -1,7 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import './Main.css';
+
 import ModalView from '../Modal/Modal';
+import DarkLight from '../DarkLight/darklight.js';
+
+import { Context } from '../../index';
+import { setDoc, doc } from 'firebase/firestore/lite';
 
 const Main = () => {
   const [number, setNumber] = useState(-1);
@@ -10,6 +14,8 @@ const Main = () => {
   const [forceUpdate, setForceUpdate] = useState(false);
 
   const prevNumberRef = useRef();
+
+  const { firebaseApp } = useContext(Context);
 
   useEffect(() => {
     prevNumberRef.current = number;
@@ -22,7 +28,7 @@ const Main = () => {
     }
   }, [number, prevNumber]);
 
-  const Submit = (e) => {
+  const SendMessage = async () => {
     // array - масив із даними кожного тижня
     let array = {
       1: '',
@@ -36,9 +42,11 @@ const Main = () => {
       if (JSON.parse(localStorage.getItem(i)) !== null)
         array[i] = JSON.parse(localStorage.getItem(i));
     }
+    // eslint-disable-next-line
+    const docRef = await setDoc(doc(firebaseApp, 'PracticePage', 'smth.there123@gmail.com'), array);
   };
   return (
-    <div className="Main">
+    <div className="Main" id="main">
       <button className="weeks__counter" onClick={() => setWeeks((prev) => !prev)}>
         Кількість тижнів
       </button>
@@ -105,10 +113,11 @@ const Main = () => {
       </div>
       <div className="endMenu">
         <p className="button__text">Коли все заповнив нажимай </p>
-        <button className="endMenu__btn" onClick={(e) => Submit(e)}>
+        <button className="endMenu__btn" onClick={() => SendMessage()}>
           Відправити всі дані
         </button>
       </div>
+      <DarkLight />
     </div>
   );
 };
